@@ -9,3 +9,6 @@ COPY hello.py .
 
 # Comando que se ejecutará al iniciar el contenedor
 CMD ["python", "hello.py"]
+
+# Exponer el puerto en el que corre la app
+EXPOSE 8080
