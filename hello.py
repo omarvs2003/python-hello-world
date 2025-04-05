@@ -15,6 +15,7 @@ class HelloHandler(BaseHTTPRequestHandler):
                 <h1>¡Hola mundo desde Github! Ahora estoy conectado a Jenkins :) gatito!!!! perrito!!!!</h1>
                 <p>Ahora vengo de un hook</p>
                 <p>PD. Omar V, Edgar R, Ruber T</p>
+                <p> test2 </p>
                 
             </body>
         </html>
