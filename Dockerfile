@@ -1,5 +1,5 @@
 # Imagen base oficial de Python
-FROM python:3.10-slim
+FROM python:3.9
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY hello.py .
 CMD ["python", "hello.py"]
 
 # Exponer el puerto en el que corre la app
-EXPOSE 8080
+EXPOSE 8090
