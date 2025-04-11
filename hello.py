@@ -9,24 +9,73 @@ class VotingHandler(BaseHTTPRequestHandler):
             votes = json.load(file)
 
         # HTML con botones de votación y botón para reiniciar
-        html = f"""
+                html = f"""
         <html>
             <head>
                 <title>Votaciones</title>
+                <style>
+                    body {{
+                        background-color: #f7f7f7;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 40px;
+                        color: #333;
+                    }}
+                    h1 {{
+                        color: #222;
+                        font-size: 2em;
+                    }}
+                    form {{
+                        margin: 20px 0;
+                    }}
+                    button {{
+                        padding: 15px 25px;
+                        margin: 10px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                    }}
+                    button:hover {{
+                        transform: scale(1.05);
+                    }}
+                    .vote-btn {{
+                        background-color: #4CAF50;
+                        color: white;
+                    }}
+                    .reset-btn {{
+                        background-color: #f44336;
+                        color: white;
+                    }}
+                    .card {{
+                        background: white;
+                        padding: 20px;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        max-width: 300px;
+                        text-align: center;
+                    }}
+                </style>
             </head>
             <body>
                 <h1>¿Qué prefieres?</h1>
                 <form method="POST">
-                    <button type="submit" name="vote" value="Pizza">🍕 Pizza</button>
-                    <button type="submit" name="vote" value="Tacos">🌮 Tacos</button>
+                    <button type="submit" name="vote" value="Pizza" class="vote-btn">🍕 Pizza</button>
+                    <button type="submit" name="vote" value="Tacos" class="vote-btn">🌮 Tacos</button>
                 </form>
 
-                <h2>Resultados:</h2>
-                <p>Pizza: {votes['Pizza']} votos</p>
-                <p>Tacos: {votes['Tacos']} votos</p>
+                <div class="card">
+                    <h2>Resultados</h2>
+                    <p>🍕 Pizza: <strong>{votes['Pizza']}</strong> votos</p>
+                    <p>🌮 Tacos: <strong>{votes['Tacos']}</strong> votos</p>
+                </div>
 
-                <form method="POST" style="margin-top: 30px;">
-                    <button type="submit" name="vote" value="reset" style="background-color: red; color: white;">🔄 Reiniciar conteo</button>
+                <form method="POST">
+                    <button type="submit" name="vote" value="reset" class="reset-btn">🔄 Reiniciar conteo</button>
                 </form>
             </body>
         </html>
