@@ -12,3 +12,5 @@ CMD ["python", "hello.py"]
 
 # Exponer el puerto en el que corre la app
 EXPOSE 8090
+# copiar archivo votes
+COPY votes.json .
