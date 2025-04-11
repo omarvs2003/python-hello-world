@@ -7,12 +7,14 @@ class VotingHandler(BaseHTTPRequestHandler):
         # Cargar votos actuales
         with open("votes.json", "r") as file:
             votes = json.load(file)
-
+            
+        total = votes["Pizza"] + votes["Tacos"]
+        
         # HTML con botones de votación y botón para reiniciar
         html = f"""
         <html>
             <head>
-                
+                <meta charset="UTF-8">
                 <title>Votaciones</title>
                 <style>
                     body {{
@@ -73,6 +75,7 @@ class VotingHandler(BaseHTTPRequestHandler):
                     <h2>Resultados</h2>
                     <p>🍕 Pizza: <strong>{votes['Pizza']}</strong> votos</p>
                     <p>🌮 Tacos: <strong>{votes['Tacos']}</strong> votos</p>
+                    <p>Total de votos: <strong>{total}</strong></p>
                 </div>
 
                 <form method="POST">
