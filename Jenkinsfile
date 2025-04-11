@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        REMOTE_HOST = "ec2-user@54.221.127.123"
+        REMOTE_HOST = "ec2-user@18.213.1.220"
         PEM_PATH = "/.ssh-keys/docker2-key.pem"
         REPO_URL = "https://github.com/omarvs2003/python-hello-world"
         PROJECT_DIR = "/python-hello-world/python-hello-world/"
