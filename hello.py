@@ -12,7 +12,7 @@ class VotingHandler(BaseHTTPRequestHandler):
         html = f"""
         <html>
             <head>
-                <meta charset="UTF-8">
+                
                 <title>Votaciones</title>
                 <style>
                     body {{
