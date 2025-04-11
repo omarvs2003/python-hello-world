@@ -9,7 +9,7 @@ class VotingHandler(BaseHTTPRequestHandler):
             votes = json.load(file)
 
         # HTML con botones de votación y botón para reiniciar
-                html = f"""
+        html = f"""
         <html>
             <head>
                 <title>Votaciones</title>
